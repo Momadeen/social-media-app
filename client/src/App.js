@@ -5,6 +5,8 @@ import "semantic-ui-css/semantic.min.css";
 import "./App.css";
 import Layout from "./Layout";
 
+import { AuthProvider } from "context/auth";
+
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
@@ -12,14 +14,16 @@ import GlobalStyle from "./styles/globalStyles";
 
 function App() {
   return (
-    <Router>
-      <GlobalStyle />
-      <Layout>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-      </Layout>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <GlobalStyle />
+        <Layout>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+        </Layout>
+      </Router>
+    </AuthProvider>
   );
 }
 

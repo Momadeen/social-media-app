@@ -1,8 +1,9 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Icon, Image } from "semantic-ui-react";
-import {ReactComponent as Logo} from '../../images/logo.svg'
+import { ReactComponent as Logo } from "images/logo.svg";
 import styles from "./Sidebar.module.scss";
+import Button from "components/Button";
 
 const SidebarEl = () => {
   const links = [
@@ -17,6 +18,8 @@ const SidebarEl = () => {
     },
     { icon: "setting", to: "/settings", title: "Settings" },
     { icon: "log out", to: "/logout", title: "Logout" },
+    { icon: "log out", to: "/login", title: "Logout" },
+    { icon: "log out", to: "/register", title: "Register" },
   ];
   return (
     <div className={styles.sidebar}>
@@ -24,21 +27,24 @@ const SidebarEl = () => {
         <div className={styles.logoContainer}>
           <Logo className={styles.logo} />
         </div>
-        {links?.map((link) => (
-          <NavLink
-            className={styles.link}
-            activeClassName={styles.active}
-            to={link?.to}
-            exact
-          >
-            {link?.image ? (
-              <Image src={link?.imageSrc} avatar />
-            ) : (
-              <Icon name={link?.icon} size="big" />
-            )}
-            <h3>{link?.title}</h3>
-          </NavLink>
-        ))}
+        <div className={styles.linksContainer}>
+          {links?.map((link) => (
+            <NavLink
+              className={styles.link}
+              activeClassName={styles.active}
+              to={link?.to}
+              exact
+            >
+              {link?.image ? (
+                <Image src={link?.imageSrc} avatar />
+              ) : (
+                <Icon name={link?.icon} size="big" />
+              )}
+              <h3>{link?.title}</h3>
+            </NavLink>
+          ))}
+        </div>
+        <Button>Create Post</Button>
       </div>
     </div>
   );

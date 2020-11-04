@@ -1,0 +1,22 @@
+.button {
+    background-color: var(--main-color);
+    border-radius: 10px;
+    color: var(--main-background);
+    outline: none;
+    border: none;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+    box-shadow: 0 3px 6px var(--shadow);
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    width: 100%;
+    &:hover {
+        background-color: var(--hover-color);
+    }
+    &.disable {
+        cursor: not-allowed;
+        color: var(--main-text);
+        background-color: var(--sec-background);
+    }
+}

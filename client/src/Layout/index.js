@@ -6,7 +6,7 @@ import styles from "./Layout.module.scss";
 const Layout = ({ children }) => (
   <Container className={styles.layout}>
     <Sidebar />
-    {children}
+    <div className={styles.childrenContainer}>{children}</div>
   </Container>
 );
 

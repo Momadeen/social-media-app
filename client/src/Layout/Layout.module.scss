@@ -1,5 +1,8 @@
 .layout {
     display: grid!important;
     grid-template-columns: 1fr 3fr;
-    column-gap: 30px
+    column-gap: 30px;
+    .childrenContainer {
+        padding: 2rem 1rem;
+    }
 }

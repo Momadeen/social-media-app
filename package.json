@@ -5,7 +5,7 @@
   "scripts": {
     "server": "node index",
     "start": "nodemon index",
-    "client": "cd client/src && yarn dev"
+    "dev": "cd client/src && yarn dev"
   },
   "license": "MIT",
   "dependencies": {
