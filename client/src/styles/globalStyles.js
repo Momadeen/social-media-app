@@ -6,7 +6,8 @@ const GlobalStyle = createGlobalStyle`
     --main-background: #fff;
     --sec-background: #B7B7B7;
     --main-text:#7E7E7E;
-    --hover-color: #2D3981;
+    --hover-color-button: #2D3981;
+    --hover-color: rgba(44, 63, 186, 0.19);
     --shadow: #e9e9e9;
 }
 `;

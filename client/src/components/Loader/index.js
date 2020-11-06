@@ -1,16 +1,13 @@
 import React from "react";
-import {
-  Dimmer,
-  Loader as SemanticLoader,
-  Segment,
-} from "semantic-ui-react";
+import { Dimmer, Loader as SemanticLoader } from "semantic-ui-react";
+import styles from "./Loader.module.scss";
 
 const Loader = () => (
-  <Segment inverted>
-    <Dimmer active inverted>
+  <div className={styles.background}>
+    <Dimmer active>
       <SemanticLoader size="large">Loading</SemanticLoader>
     </Dimmer>
-  </Segment>
+  </div>
 );
 
 export default Loader;

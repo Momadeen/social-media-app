@@ -17,15 +17,22 @@
       }
     }
     .linksContainer {
-
       .link {
         color: var(--main-text);
         display: flex;
         align-items: center;
-        padding: 1.3rem 0.5rem;
+        padding: 0.5rem 0.5rem;
         cursor: pointer;
+        border-radius: 10px;
+        margin: 20px 0;
+        transition: 0.1s all ease-in-out;
         &.active {
           color: var(--main-color);
+          background-color: var(--hover-color);
+        }
+        &:hover {
+          color: var(--main-color);
+          background-color: var(--hover-color);
         }
         h3 {
           margin-left: 1rem;
