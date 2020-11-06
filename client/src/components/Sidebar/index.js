@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Icon, Image } from "semantic-ui-react";
 import { ReactComponent as Logo } from "images/logo.svg";
 import styles from "./Sidebar.module.scss";
 import Button from "components/Button";
+import { AuthContext } from "context/auth";
 
 const SidebarEl = () => {
+  const { user, logout } = useContext(AuthContext);
   const links = [
     { icon: "home", to: "/", title: "Home" },
     { icon: "inbox", to: "/messages", title: "Messages" },
@@ -17,10 +19,8 @@ const SidebarEl = () => {
       title: "Profile",
     },
     { icon: "setting", to: "/settings", title: "Settings" },
-    { icon: "log out", to: "/logout", title: "Logout" },
-    { icon: "log out", to: "/login", title: "Logout" },
-    { icon: "log out", to: "/register", title: "Register" },
   ];
+  console.log({ user });
   return (
     <div className={styles.sidebar}>
       <div className={styles.container}>
@@ -33,6 +33,7 @@ const SidebarEl = () => {
               className={styles.link}
               activeClassName={styles.active}
               to={link?.to}
+              onClick={link?.onClick}
               exact
             >
               {link?.image ? (
@@ -43,6 +44,10 @@ const SidebarEl = () => {
               <h3>{link?.title}</h3>
             </NavLink>
           ))}
+          <div className={styles.link} onClick={logout}>
+            <Icon name="log out" size="big" />
+            <h3>Logout</h3>
+          </div>
         </div>
         <Button>Create Post</Button>
       </div>

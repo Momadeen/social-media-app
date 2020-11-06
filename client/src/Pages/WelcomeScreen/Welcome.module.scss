@@ -1,0 +1,41 @@
+.Welcome {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  overflow: hidden;
+
+  .rightSide {
+    padding: 0 50px;
+  }
+  .info {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .logo {
+      fill: var(--main-color);
+      width: 45px;
+      height: 45px;
+      margin: 20px 0;
+    }
+    .welcomeText {
+      color: var(--main-color);
+    }
+    .buttonsContainer {
+      width: 30%;
+      button {
+        margin-top: 30px;
+      }
+    }
+  }
+  .draw {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+  }
+}

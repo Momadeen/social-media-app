@@ -1,10 +1,17 @@
 import React from "react";
 import cx from "classnames";
 import PropTypes from "prop-types";
-import { Button as ButtonSem } from 'semantic-ui-react'
+import { Button as ButtonSem } from "semantic-ui-react";
 import styles from "./Button.module.scss";
 
-const Button = ({ type, disable, onClick, loading, children }) => {
+const Button = ({
+  type,
+  disable,
+  onClick,
+  loading,
+  children,
+  buttonColor = "primary",
+}) => {
   return (
     <>
       {loading ? (
@@ -14,7 +21,14 @@ const Button = ({ type, disable, onClick, loading, children }) => {
           type={type}
           disabled={disable}
           onClick={onClick}
-          className={cx(styles.button, disable ? styles.disable : null)}
+          className={cx(
+            styles.button,
+            disable
+              ? styles.disable
+              : buttonColor === "primary"
+              ? styles.primary
+              : styles.outline
+          )}
         >
           {children}
         </button>
