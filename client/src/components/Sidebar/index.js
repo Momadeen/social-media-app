@@ -1,13 +1,19 @@
-import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 import { Icon, Image } from "semantic-ui-react";
 import { ReactComponent as Logo } from "images/logo.svg";
 import styles from "./Sidebar.module.scss";
 import Button from "components/Button";
 import { AuthContext } from "context/auth";
+import PostModal from "components/Modal/PostModal/PostModal";
 
 const SidebarEl = () => {
-  const { user, logout } = useContext(AuthContext);
+  const [showModal, setShowModal] = useState(false);
+  const handleOpen = () => setShowModal(!showModal);
+
+  const history = useHistory();
+
+  const { logout } = useContext(AuthContext);
   const links = [
     { icon: "home", to: "/", title: "Home" },
     { icon: "inbox", to: "/messages", title: "Messages" },
@@ -20,16 +26,17 @@ const SidebarEl = () => {
     },
     { icon: "setting", to: "/settings", title: "Settings" },
   ];
-  console.log({ user });
+
   return (
     <div className={styles.sidebar}>
       <div className={styles.container}>
         <div className={styles.logoContainer}>
-          <Logo className={styles.logo} />
+          <Logo cursor="pointer" className={styles.logo} onClick={() => history.push("/")} />
         </div>
         <div className={styles.linksContainer}>
           {links?.map((link) => (
             <NavLink
+              key={link.title}
               className={styles.link}
               activeClassName={styles.active}
               to={link?.to}
@@ -49,8 +56,9 @@ const SidebarEl = () => {
             <h3>Logout</h3>
           </div>
         </div>
-        <Button>Create Post</Button>
+        <Button onClick={handleOpen}>Create Post</Button>
       </div>
+      {showModal && <PostModal onClose={handleOpen} />}
     </div>
   );
 };

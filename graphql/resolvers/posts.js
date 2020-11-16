@@ -7,7 +7,7 @@ module.exports = {
   Query: {
     async getPosts() {
       try {
-        const posts = await Post.find();
+        const posts = await Post.find().sort({ createdAt: -1 });
         return posts;
       } catch (ex) {
         throw new Error(ex);
@@ -30,7 +30,7 @@ module.exports = {
     async createPost(_, { body }, context) {
       const user = checkAuth(context);
 
-      if (args.body.trim() === "") {
+      if (body.trim() === "") {
         throw new Error("Post body must not ne empty");
       }
       const newPost = new Post({

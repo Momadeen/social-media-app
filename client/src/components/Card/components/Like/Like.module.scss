@@ -1,0 +1,14 @@
+.like {
+  display: flex;
+  align-items: center;
+  h4 {
+    color: var(--main-text);
+  }
+  i {
+    color: var(--main-text);
+    cursor: pointer;
+    &.liked {
+      color: var(--main-color);
+    }
+  }
+}
