@@ -3,6 +3,7 @@ import useCreatePost from "hooks/posts/useCreatePost";
 import useForm from "hooks/useForm";
 import React from "react";
 import { Form, Icon, TextArea } from "semantic-ui-react";
+import PropTypes from "prop-types";
 import styles from "./PostModal.module.scss";
 
 const PostModal = ({ onClose }) => {
@@ -40,6 +41,10 @@ const PostModal = ({ onClose }) => {
       </div>
     </div>
   );
+};
+
+PostModal.propTypes = {
+  onClose: PropTypes.func.isRequired,
 };
 
 export default PostModal;

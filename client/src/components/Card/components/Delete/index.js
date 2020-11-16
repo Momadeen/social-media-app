@@ -13,7 +13,7 @@ const Delete = ({ postId, commentId }) => {
   const handleOpen = () => setOpen(!open);
   const handleConfirm = () => {
     handleOpen();
-    commentId ? deleteComment(commentId, postId) : deletePost(postId);
+    return commentId ? deleteComment(commentId, postId) : deletePost(postId);
   };
 
   return (

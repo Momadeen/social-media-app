@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
 import PropTypes from "prop-types";
+import Sidebar from "../components/Sidebar";
 import styles from "./Layout.module.scss";
 
 const Layout = ({ children }) => (

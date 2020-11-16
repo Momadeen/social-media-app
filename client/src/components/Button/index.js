@@ -43,7 +43,7 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   disable: PropTypes.bool.isRequired,
   loading: PropTypes.bool.isRequired,
-  buttonColor: PropTypes.string.isRequired
+  buttonColor: PropTypes.string.isRequired,
 };
 
 export default Button;
