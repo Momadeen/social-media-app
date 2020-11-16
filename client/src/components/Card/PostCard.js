@@ -91,7 +91,10 @@ const PostCard = ({ post, type }) => {
           <div className={styles.footer}>
             <div className={styles.actions}>
               <Like post={post} user={user} />
-              <Icon name="comment alternate" size="large" />
+              <div className={styles.comment}>
+                <Icon name="comment alternate" size="large" />
+                <h4>{post?.comments.length}</h4>
+              </div>
               <Icon name="share" size="large" />
             </div>
             {user && post?.username === user?.user?.username ? (

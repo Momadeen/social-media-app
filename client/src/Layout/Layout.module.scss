@@ -1,8 +1,10 @@
 .layout {
-    display: grid!important;
-    grid-template-columns: 1fr 3fr;
-    column-gap: 30px;
-    .childrenContainer {
-        padding: 2rem 1rem;
-    }
+  position: fixed;
+  display: flex!important;
+  .childrenContainer {
+      overflow-y: scroll;
+      height: 100vh;
+      padding: 30px;
+      width: 80vw;
+  }
 }

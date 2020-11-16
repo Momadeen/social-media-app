@@ -41,6 +41,13 @@
       align-items: center;
       justify-content: space-between;
       width: 50%;
+      .comment {
+        display: flex;
+        align-items: center;
+        h4 {
+          color: var(--main-text);
+        }
+      }
     }
     i {
       color: var(--main-text);

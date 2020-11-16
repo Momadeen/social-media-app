@@ -24,7 +24,7 @@ const SidebarEl = () => {
       to: "/profile",
       title: "Profile",
     },
-    { icon: "setting", to: "/settings", title: "Settings" },
+    // { icon: "setting", to: "/settings", title: "Settings" },
   ];
 
   return (
