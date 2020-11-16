@@ -1,7 +1,7 @@
 # social-media-app
 
 This soical media app builded by MERNG technologies and got inspirstion from:
- ## twitter as UX
+ ## Twitter as UX
   - Tweet Card
   - Login Page
   
