@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 const SinglePost = () => {
   const { postId } = useParams();
   const { singlePost } = useSinglePost({ postId });
-  console.log({ singlePost });
 
   return <PostCard type="single" post={singlePost} />;
   // return <h1>Hello</h1>;

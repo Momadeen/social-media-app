@@ -2,6 +2,7 @@ import Button from "components/Button";
 import useCreateComment from "hooks/posts/useCreateComment";
 import React, { useState } from "react";
 import { Form, Header, Comment } from "semantic-ui-react";
+import PropTypes from "prop-types";
 import Delete from "../Delete";
 
 const CommentComponent = ({ postId, comments, owner }) => {
@@ -9,9 +10,9 @@ const CommentComponent = ({ postId, comments, owner }) => {
   const { createComment } = useCreateComment();
   console.log(owner);
 
-  const onSubmit = async() => {
+  const onSubmit = async () => {
     await createComment(comment, postId);
-    setComment('');
+    setComment("");
   };
   return (
     <Comment.Group>
@@ -20,7 +21,7 @@ const CommentComponent = ({ postId, comments, owner }) => {
       </Header>
 
       {comments?.map((comment) => (
-        <Comment>
+        <Comment key={comment?.id}>
           <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
           <Comment.Content>
             <Comment.Author as="a">{comment?.username}</Comment.Author>
@@ -55,4 +56,9 @@ const CommentComponent = ({ postId, comments, owner }) => {
   );
 };
 
+CommentComponent.propTypes = {
+  postId: PropTypes.string.isRequired,
+  comments: PropTypes.string.isRequired,
+  owner: PropTypes.bool.isRequired,
+};
 export default CommentComponent;

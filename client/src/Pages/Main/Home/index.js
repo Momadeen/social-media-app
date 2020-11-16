@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Grid, Transition } from "semantic-ui-react";
 import PostCard from "components/Card/PostCard";
 import useGetPosts from "hooks/posts/useGetPosts";
-
 
 const Home = () => {
   const { posts } = useGetPosts();

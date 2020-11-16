@@ -2,6 +2,7 @@ import useDeleteComment from "hooks/posts/useDeleteComment";
 import useDeletePost from "hooks/posts/useDeletePost";
 import React, { useState } from "react";
 import { Confirm, Icon } from "semantic-ui-react";
+import PropTypes from "prop-types";
 import styles from "./Delete.module.scss";
 
 const Delete = ({ postId, commentId }) => {
@@ -21,6 +22,11 @@ const Delete = ({ postId, commentId }) => {
       <Confirm open={open} onCancel={handleOpen} onConfirm={handleConfirm} />
     </div>
   );
+};
+
+Delete.propTypes = {
+  postId: PropTypes.string.isRequired,
+  commentId: PropTypes.string.isRequired,
 };
 
 export default Delete;

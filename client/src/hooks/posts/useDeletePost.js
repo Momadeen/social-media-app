@@ -9,7 +9,7 @@ const useDeletePost = () => {
   const deletePost = useCallback(
     async (postId) => {
       try {
-       await deletePostMutation({
+        await deletePostMutation({
           variables: {
             postId,
           },

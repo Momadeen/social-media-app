@@ -21,6 +21,7 @@ export default gql`
       email
       username
       token
+      picture
     }
   }
 `;

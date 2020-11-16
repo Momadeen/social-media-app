@@ -11,6 +11,7 @@ export default gql`
         body
         id
         username
+        picture
       }
     }
   }

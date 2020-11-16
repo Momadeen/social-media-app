@@ -3,9 +3,9 @@ import { Form } from "semantic-ui-react";
 import Button from "components/Button";
 import useCreateUser from "hooks/user/useCreateUser";
 import useForm from "hooks/useForm";
-import styles from "./Register.module.scss";
 import BackBtn from "components/Button/BackBtn";
 import { useHistory } from "react-router-dom";
+import styles from "./Register.module.scss";
 
 const Register = () => {
   const history = useHistory();

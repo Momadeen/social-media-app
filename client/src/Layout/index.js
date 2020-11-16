@@ -1,5 +1,6 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
+import PropTypes from "prop-types";
 import styles from "./Layout.module.scss";
 
 const Layout = ({ children }) => (
@@ -8,5 +9,9 @@ const Layout = ({ children }) => (
     <div className={styles.childrenContainer}>{children}</div>
   </div>
 );
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Layout;

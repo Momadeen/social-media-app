@@ -27,7 +27,11 @@ const PostModal = ({ onClose }) => {
           />
           <div className={styles.footer}>
             <div className={styles.btnContainer}>
-              <Button type="submit" loading={loading} disable={values?.body === ''}>
+              <Button
+                type="submit"
+                loading={loading}
+                disable={values?.body === ""}
+              >
                 Post
               </Button>
             </div>
