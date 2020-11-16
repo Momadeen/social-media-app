@@ -1,16 +1,17 @@
 import moment from "moment";
 import React, { useContext } from "react";
 import { Card, Header, Icon, Image } from "semantic-ui-react";
-import { Link } from "react-router-dom";
-import styles from "./PostCard.module.scss";
+import { Link, useHistory } from "react-router-dom";
 import { AuthContext } from "context/auth";
-import Button from "components/Button";
+import PropTypes from "prop-types";
+import styles from "./PostCard.module.scss";
 import Like from "./components/Like";
 import Delete from "./components/Delete";
 import Comment from "./components/Comment";
 
 const PostCard = ({ post, type }) => {
   const user = useContext(AuthContext);
+  const history = useHistory();
 
   return (
     <>
@@ -91,7 +92,11 @@ const PostCard = ({ post, type }) => {
           <div className={styles.footer}>
             <div className={styles.actions}>
               <Like post={post} user={user} />
-              <div className={styles.comment}>
+              <div
+                className={styles.comment}
+                onClick={() => history.push(`/posts/${post?.id}`)}
+                to={`/posts/${post?.id}`}
+              >
                 <Icon name="comment alternate" size="large" />
                 <h4>{post?.comments.length}</h4>
               </div>
@@ -107,6 +112,9 @@ const PostCard = ({ post, type }) => {
   );
 };
 
-// delete component
+PostCard.propTypes = {
+  post: PropTypes.object.isRequired,
+  type: PropTypes.string.isRequired,
+};
 
 export default PostCard;

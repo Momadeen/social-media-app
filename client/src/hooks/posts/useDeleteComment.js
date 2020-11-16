@@ -7,7 +7,6 @@ const useDeleteComment = () => {
 
   const deleteComment = useCallback(
     async (commentId, postId) => {
-      console.log({ commentId, postId });
       try {
         await deleteCommentMutation({
           variables: {

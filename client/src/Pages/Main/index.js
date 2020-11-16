@@ -1,9 +1,9 @@
 import { AuthProvider } from "context/auth";
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import Layout from "Layout";
 import Home from "./Home";
 import Settings from "./Settings";
-import Layout from "Layout";
 import SinglePost from "./SinglePost";
 
 const Main = () => (

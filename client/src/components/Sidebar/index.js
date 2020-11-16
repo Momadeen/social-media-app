@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import { Icon, Image } from "semantic-ui-react";
 import { ReactComponent as Logo } from "images/logo.svg";
-import styles from "./Sidebar.module.scss";
 import Button from "components/Button";
 import { AuthContext } from "context/auth";
 import PostModal from "components/Modal/PostModal/PostModal";
+import styles from "./Sidebar.module.scss";
 
 const SidebarEl = () => {
   const [showModal, setShowModal] = useState(false);
@@ -31,7 +31,11 @@ const SidebarEl = () => {
     <div className={styles.sidebar}>
       <div className={styles.container}>
         <div className={styles.logoContainer}>
-          <Logo cursor="pointer" className={styles.logo} onClick={() => history.push("/")} />
+          <Logo
+            cursor="pointer"
+            className={styles.logo}
+            onClick={() => history.push("/")}
+          />
         </div>
         <div className={styles.linksContainer}>
           {links?.map((link) => (

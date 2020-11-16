@@ -7,6 +7,7 @@ export default gql`
       username
       fullName
       token
+      picture
     }
   }
 `;

@@ -27,7 +27,7 @@ const useCreatePost = ({ onClose }) => {
       }
       onClose();
     },
-    [createPostMutation]
+    [createPostMutation, onClose]
   );
 
   return {

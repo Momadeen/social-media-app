@@ -28,7 +28,6 @@ const useLogin = ({ setErrors }) => {
             password: values?.password,
           },
         });
-        console.log("logined");
       } catch (ex) {
         console.log(ex);
       }

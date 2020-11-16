@@ -30,7 +30,6 @@ const useCreateUser = ({ setErrors }) => {
             email: values?.email,
           },
         });
-        console.log("Done");
       } catch (ex) {
         console.log(ex);
       }

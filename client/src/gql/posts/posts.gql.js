@@ -7,6 +7,7 @@ export default gql`
       body
       createdAt
       username
+
       comments {
         id
         body

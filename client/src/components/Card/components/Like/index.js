@@ -1,10 +1,11 @@
 import useLike from "hooks/posts/useLike";
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
 import styles from "./Like.module.scss";
 
-const Like = ({ post: { likeCount, id, likes }, user }) => {
+const LikeComponent = ({ post: { likeCount, id, likes }, user }) => {
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
@@ -39,4 +40,9 @@ const Like = ({ post: { likeCount, id, likes }, user }) => {
   );
 };
 
-export default Like;
+LikeComponent.propTypes = {
+  post: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired,
+};
+
+export default LikeComponent;

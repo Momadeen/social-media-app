@@ -41,6 +41,9 @@ Button.propTypes = {
   type: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
+  disable: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
+  buttonColor: PropTypes.string.isRequired,
 };
 
 export default Button;
